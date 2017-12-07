@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		28BD1DF3E1F3C1AD9F70CFD4 /* Pods_Expenser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1345D91F11658C0B5198CC2 /* Pods_Expenser.framework */; };
+		C63BB27C1F8A8FC4000FA5DD /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BB27B1F8A8FC4000FA5DD /* TVC.swift */; };
+		C63BB27E1F8A9EE3000FA5DD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63BB27D1F8A9EE3000FA5DD /* User.swift */; };
+		C66806441F975585007D9B23 /* addExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66806431F975585007D9B23 /* addExpenseView.swift */; };
+		C66806471F977AC1007D9B23 /* tvcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66806451F977AC1007D9B23 /* tvcell.swift */; };
+		C66806481F977AC1007D9B23 /* tvcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C66806461F977AC1007D9B23 /* tvcell.xib */; };
 		C68E8A911F6DA96500CB495B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E8A901F6DA96500CB495B /* AppDelegate.swift */; };
 		C68E8A931F6DA96500CB495B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E8A921F6DA96500CB495B /* ViewController.swift */; };
 		C68E8A961F6DA96500CB495B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C68E8A941F6DA96500CB495B /* Main.storyboard */; };
@@ -17,7 +22,8 @@
 		C68E8AB11F6DA96500CB495B /* ExpenserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E8AB01F6DA96500CB495B /* ExpenserUITests.swift */; };
 		C68E8ABF1F6DA9AA00CB495B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C68E8ABE1F6DA9AA00CB495B /* Podfile */; };
 		C69860491F89316C003B9A8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C69860481F89316C003B9A8F /* GoogleService-Info.plist */; };
-		C69B224C1F75A50F00E14C2E /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69B224B1F75A50F00E14C2E /* TableViewController.swift */; };
+		C69B781B1F94F8F400125B76 /* cellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69B781A1F94F8F400125B76 /* cellView.swift */; };
+		C6A20AFF1FB49D9A00D407E6 /* addBalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A20AFE1FB49D9A00D407E6 /* addBalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,11 @@
 /* Begin PBXFileReference section */
 		14B697C4A8525D02D145555B /* Pods-Expenser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expenser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Expenser/Pods-Expenser.debug.xcconfig"; sourceTree = "<group>"; };
 		3226E974C72FB35AB0EB296A /* Pods-Expenser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Expenser.release.xcconfig"; path = "Pods/Target Support Files/Pods-Expenser/Pods-Expenser.release.xcconfig"; sourceTree = "<group>"; };
+		C63BB27B1F8A8FC4000FA5DD /* TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TVC.swift; path = ../TVC.swift; sourceTree = "<group>"; };
+		C63BB27D1F8A9EE3000FA5DD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C66806431F975585007D9B23 /* addExpenseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addExpenseView.swift; sourceTree = "<group>"; };
+		C66806451F977AC1007D9B23 /* tvcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvcell.swift; sourceTree = "<group>"; };
+		C66806461F977AC1007D9B23 /* tvcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tvcell.xib; sourceTree = "<group>"; };
 		C68E8A8D1F6DA96500CB495B /* Expenser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expenser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68E8A901F6DA96500CB495B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C68E8A921F6DA96500CB495B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +66,8 @@
 		C68E8AB21F6DA96500CB495B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C68E8ABE1F6DA9AA00CB495B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C69860481F89316C003B9A8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C69B224B1F75A50F00E14C2E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C69B781A1F94F8F400125B76 /* cellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellView.swift; sourceTree = "<group>"; };
+		C6A20AFE1FB49D9A00D407E6 /* addBalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addBalView.swift; sourceTree = "<group>"; };
 		F1345D91F11658C0B5198CC2 /* Pods_Expenser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Expenser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -128,14 +140,20 @@
 		C68E8A8F1F6DA96500CB495B /* Expenser */ = {
 			isa = PBXGroup;
 			children = (
+				C63BB27B1F8A8FC4000FA5DD /* TVC.swift */,
 				C68E8A901F6DA96500CB495B /* AppDelegate.swift */,
+				C69B781A1F94F8F400125B76 /* cellView.swift */,
 				C68E8A921F6DA96500CB495B /* ViewController.swift */,
 				C68E8A941F6DA96500CB495B /* Main.storyboard */,
 				C68E8A971F6DA96500CB495B /* Assets.xcassets */,
 				C68E8A991F6DA96500CB495B /* LaunchScreen.storyboard */,
 				C68E8A9C1F6DA96500CB495B /* Info.plist */,
-				C69B224B1F75A50F00E14C2E /* TableViewController.swift */,
 				C69860481F89316C003B9A8F /* GoogleService-Info.plist */,
+				C63BB27D1F8A9EE3000FA5DD /* User.swift */,
+				C66806431F975585007D9B23 /* addExpenseView.swift */,
+				C66806451F977AC1007D9B23 /* tvcell.swift */,
+				C66806461F977AC1007D9B23 /* tvcell.xib */,
+				C6A20AFE1FB49D9A00D407E6 /* addBalView.swift */,
 			);
 			path = Expenser;
 			sourceTree = "<group>";
@@ -274,6 +292,7 @@
 				C68E8ABF1F6DA9AA00CB495B /* Podfile in Resources */,
 				C68E8A961F6DA96500CB495B /* Main.storyboard in Resources */,
 				C69860491F89316C003B9A8F /* GoogleService-Info.plist in Resources */,
+				C66806481F977AC1007D9B23 /* tvcell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,8 +365,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C63BB27E1F8A9EE3000FA5DD /* User.swift in Sources */,
+				C69B781B1F94F8F400125B76 /* cellView.swift in Sources */,
 				C68E8A931F6DA96500CB495B /* ViewController.swift in Sources */,
-				C69B224C1F75A50F00E14C2E /* TableViewController.swift in Sources */,
+				C66806441F975585007D9B23 /* addExpenseView.swift in Sources */,
+				C66806471F977AC1007D9B23 /* tvcell.swift in Sources */,
+				C63BB27C1F8A8FC4000FA5DD /* TVC.swift in Sources */,
+				C6A20AFF1FB49D9A00D407E6 /* addBalView.swift in Sources */,
 				C68E8A911F6DA96500CB495B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

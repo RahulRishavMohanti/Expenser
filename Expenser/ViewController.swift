@@ -11,15 +11,25 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 import Canvas
+var x = String()
+var y = String()
+var bal = ""
+var curr_user = String()
+var y_name = String()
+var y_amt = String()
+var y_method = String()
+var y_date = String()
 class ViewController: UIViewController, UITextFieldDelegate {
-    var x=""
-    @IBOutlet weak var checkInView: CSAnimationView!
+    //@IBOutlet weak var checkInView: CSAnimationView!
+    @IBOutlet weak var Dollar: CSAnimationView!
     @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var Password: UITextField!
 
+    @IBOutlet weak var butt: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        butt.layer.cornerRadius = 4
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -34,9 +44,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
-          if(textField == Password && textField.isFirstResponder)
+          if(textField == Password)
           {
-          ScrollView.setContentOffset(CGPoint(x: 0, y: 250), animated: true)
+          ScrollView.setContentOffset(CGPoint(x: 0, y: 200), animated: true)
         }
     }
     
@@ -48,10 +58,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func checkIn(_ sender: Any)
-    {
-        checkInView.type=CSAnimationTypeZoomOut
-        checkInView.startCanvasAnimation()
+    {   //butt.setBackgroundImage(#imageLiteral(resourceName: "tapped"), for: UIControlState.selected)
         print("clicked")
+        
         Password.resignFirstResponder()
         Auth.auth().createUser(withEmail: username.text!, password: Password.text!)
         { (user, error) in
@@ -62,6 +71,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             else
             {
                 print("User Created")
+                var ref: DatabaseReference!
+                ref = Database.database().reference()
+                ref.child("Expenses").child((user?.uid)!).child("0").updateChildValues(["expense":"Food 200 Cash 6th"])
+                ref.child("Balance").updateChildValues([(user?.uid)!:"0"])
                 self.login()
             }
         }
@@ -70,34 +83,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func login(){
         Auth.auth().signIn(withEmail: username.text!, password: Password.text!) { (user, error) in
             if error != nil
-            {   self.checkInView.type = CSAnimationTypeShake
-                self.checkInView.duration = 1
-                self.checkInView.startCanvasAnimation()
+            { 
                 print("Incorrect Pass")
             }
             else
-            {   //print (user?.email ?? "rahul")
+            {   curr_user = (user?.uid)!
+                //print (user?.email ?? "rahul")
                 var ref: DatabaseReference!
                 ref = Database.database().reference()
                 ref.updateChildValues(["currentUser":user?.uid ?? "none"])
-                
-                 self.performSegue(withIdentifier: "firstSegue", sender: nil)
-                ref.child("NameFromUID").observeSingleEvent(of: .value, with: { (snapshot) in
-                    // Get user value
-                    let value = snapshot.value as? NSDictionary
-                    print(value)
-                    self.x = value?[(user?.uid)!] as? String ?? ""
-                    print (self.x)
-                    print ("Huzzah")
+                x = (user?.uid)! as? String ?? ""
+                self.Dollar.type = CSAnimationTypeZoomIn
+                self.Dollar.duration = 2
+                self.Dollar.delay = 0
+                self.Dollar.startCanvasAnimation()
+                self.performSegue(withIdentifier: "firstSegue", sender: nil)
                     
-                    self.performSegue(withIdentifier: "firstSegue", sender: nil)
-                    
-                    
-                })
-                { (error) in
-                    print(error.localizedDescription)
-                }
-                
+            
             }
         }
     }
